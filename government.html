@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algernon Public Sector | Federal &amp; Institutional Contracting</title>
+<meta name="description" content="Algernon Technology Public Sector Division: Capability statement, NAICS classifications, FAR Part 13 fulfillment, and geospatial/data systems engineering for U.S. federal and municipal agencies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #000000;
+    --card-bg: rgba(255, 255, 255, 0.025);
+    --card-hover: rgba(255, 255, 255, 0.045);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.22);
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1AA;
+    --text-muted: #71717A;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --sky: #38BDF8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ambient-beam {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    height: 520px;
+    background: radial-gradient(ellipse 80% 50% at 50% -10%, var(--accent-glow), transparent 75%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+
+  .brand-logo {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
+  }
+
+  .brand-name {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--text-primary);
+  }
+
+  .hero {
+    padding: 88px 0 64px;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #38BDF8;
+    margin-bottom: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: clamp(34px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    max-width: 900px;
+    margin-bottom: 20px;
+  }
+
+  .lead {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 760px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .meta-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .meta-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .meta-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .section {
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .section-sub {
+    color: var(--text-secondary);
+    font-size: 15px;
+    max-width: 680px;
+    margin-bottom: 36px;
+  }
+
+  /* Modernized NAICS Grid */
+  .naics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  .naics-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.2s ease;
+  }
+
+  .naics-card:hover {
+    background: var(--card-hover);
+    border-color: var(--border-hover);
+  }
+
+  .naics-code-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #38BDF8;
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .naics-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+
+  .naics-desc {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Contact Box */
+  .contact-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .btn-primary {
+    background: #FFFFFF;
+    color: #000000;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.18);
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(255, 255, 255, 0.3);
+  }
+
+  footer {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<div class="ambient-beam"></div>
+
+<!-- Glass Navigation -->
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <div class="brand-logo">▲</div>
+      <span class="brand-name">ALGERNON PUBLIC SECTOR</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">&larr; Commercial Site</a>
+      <a href="#naics">NAICS Matrix</a>
+      <a href="#compliance">Procurement Vehicles</a>
+      <a href="mailto:tobias@algernontechnology.com" style="color:#38BDF8; font-weight:600;">gov@algernontechnology.com</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="status-pill">
+      U.S. Small Business • Federal &amp; Municipal Contracting
+    </div>
+    <h1>Capability Statement &amp; Public Sector Systems.</h1>
+    <p class="lead">
+      Algernon Technology provides specialized software engineering, large-scale spatial data processing, and enterprise COTS software fulfillment for federal agencies, defense logistics, and municipal departments.
+    </p>
+
+    <!-- Key Institutional Metadata -->
+    <div class="meta-grid">
+      <div class="meta-card">
+        <div class="meta-label">Legal / DBA Entity</div>
+        <div class="meta-value">Algernon Technology</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Business Structure</div>
+        <div class="meta-value">U.S. Small Business</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">SAM.gov Registration</div>
+        <div class="meta-value">Validated (UEI in Issue)</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Physical Location</div>
+        <div class="meta-value">Portland, OR 97222</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAICS Classifications -->
+<section id="naics" class="section">
+  <div class="container">
+    <h2 class="section-title">Primary NAICS Classifications</h2>
+    <p class="section-sub">Algernon Technology is registered and operationally equipped to perform work across the following North American Industry Classification System (NAICS) codes:</p>
+
+    <div class="naics-grid">
+      <div class="naics-card">
+        <span class="naics-code-badge">NAICS 541511</span>
+        <h3 class="naics-title">Custom Computer Programming Services</h3>
+        <p class="naics-desc">
+          Full-stack custom software development, automated ETL workflows, API bridges, AI agent integration, and custom command dashboards.
+        </p>
+      </div>
+
+      <div class="naics-card">
+        <span class="naics-code-badge">NAICS 518210</span>
+        <h3 class="naics-title">Computing Infrastructure, Data Processing &amp; Hosting</h3>
+        <p class="naics-desc">
+          Automated data collection, high-throughput pipeline hosting, spatial/GIS geocoding verification (TIGERweb / Census API), and automated QA.
+        </p>
+      </div>
+
+      <div class="naics-card">
+        <span class="naics-code-badge">NAICS 541512</span>
+        <h3 class="naics-title">Computer Systems Design Services</h3>
+        <p class="naics-desc">
+          Cloud systems architecture, systems integration, container orchestration, database modernization, and legacy system API bridging.
+        </p>
+      </div>
+
+      <div class="naics-card">
+        <span class="naics-code-badge">NAICS 513210</span>
+        <h3 class="naics-title">Software Publishers &amp; COTS Software Fulfillment</h3>
+        <p class="naics-desc">
+          Fulfillment, licensing, deployment, and technical maintenance for Commercial-Off-The-Shelf (COTS) software products and cloud subscriptions.
+        </p>
+      </div>
+
+      <div class="naics-card">
+        <span class="naics-code-badge">NAICS 541519</span>
+        <h3 class="naics-title">Other Computer Related Services</h3>
+        <p class="naics-desc">
+          Cybersecurity posture evaluation, automated Third-Party Risk Management (TPRM), DNS identity stack audits, and technical advisory.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Procurement Vehicles -->
+<section id="compliance" class="section">
+  <div class="container">
+    <h2 class="section-title">Procurement Vehicles &amp; Contracting Methods</h2>
+    <p class="section-sub">We support federal contracting officers and prime contractors across standard acquisition frameworks:</p>
+
+    <div class="naics-grid">
+      <div class="naics-card">
+        <h3 class="naics-title">FAR Part 13 Simplified Acquisition</h3>
+        <p class="naics-desc">
+          Direct award and small-business set-aside acquisition for commercial services and products up to the $250,000 Simplified Acquisition Threshold (SAT).
+        </p>
+      </div>
+
+      <div class="naics-card">
+        <h3 class="naics-title">Micro-Purchase Rapid Fulfillment</h3>
+        <p class="naics-desc">
+          Instant government purchase card (GPC) fulfillment for software subscriptions, dataset deliveries, and engineering pilots under the $10,000 micro-purchase limit.
+        </p>
+      </div>
+
+      <div class="naics-card">
+        <h3 class="naics-title">Subcontracting &amp; Prime Teaming</h3>
+        <p class="naics-desc">
+          Agile technical subcontractor partnering with Tier-1 defense primes to satisfy small business participation goals on major federal task orders.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Direct Contact Section -->
+<section class="section" style="padding-top: 0; border-top: none;">
+  <div class="container">
+    <div class="contact-box">
+      <div>
+        <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 6px;">Initiate an RFP or Capabilities Inquiry</h3>
+        <p style="color: var(--text-secondary); font-size: 14px;">Contact our public sector engineering team for capability statements, teaming arrangements, or Sources Sought responses.</p>
+      </div>
+      <div>
+        <a href="mailto:tobias@algernontechnology.com" class="btn-primary">Contact Contracting Officer &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div>&copy; 2026 Algernon Technology. All rights reserved. U.S. Small Business.</div>
+    <div>Portal Inquiries: <a href="mailto:tobias@algernontechnology.com" style="color:#38BDF8;text-decoration:none;">tobias@algernontechnology.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
