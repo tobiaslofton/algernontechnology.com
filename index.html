@@ -43,9 +43,45 @@
     width: 100%;
     max-width: 1200px;
     height: 580px;
-    background: radial-gradient(ellipse 80% 60% at 50% -10%, var(--accent-glow), transparent 75%);
+    background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(56, 189, 248, 0.16), transparent 75%);
     pointer-events: none;
     z-index: 0;
+  }
+
+  /* Ambient Floating Blue Light Orbs */
+  .ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .ambient-orb-1 {
+    top: 720px;
+    right: -160px;
+    width: 620px;
+    height: 620px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.13) 0%, rgba(99, 102, 241, 0.04) 55%, transparent 70%);
+    filter: blur(90px);
+  }
+
+  .ambient-orb-2 {
+    top: 1500px;
+    left: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.11) 0%, rgba(56, 189, 248, 0.03) 50%, transparent 70%);
+    filter: blur(100px);
+  }
+
+  .ambient-orb-3 {
+    top: 2200px;
+    right: -120px;
+    width: 580px;
+    height: 580px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.09) 0%, rgba(129, 140, 248, 0.03) 50%, transparent 70%);
+    filter: blur(85px);
   }
 
   .grid-overlay {
@@ -313,9 +349,9 @@
 
   .bento-card:hover {
     background: var(--card-hover);
-    border-color: var(--border-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    border-color: rgba(56, 189, 248, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(56, 189, 248, 0.12), inset 0 0 20px rgba(56, 189, 248, 0.02);
   }
 
   .card-col-6 { grid-column: span 6; }
@@ -386,8 +422,9 @@
 
   .product-card:hover {
     background: var(--card-hover);
-    border-color: var(--border-hover);
-    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(56, 189, 248, 0.12);
   }
 
   .product-badge {
@@ -506,6 +543,9 @@
 <body>
 
 <div class="ambient-beam"></div>
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+<div class="ambient-orb ambient-orb-3"></div>
 <div class="grid-overlay"></div>
 
 <!-- Glass Navigation -->
@@ -700,5 +740,16 @@
   </div>
 </footer>
 
+<script>
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const orb1 = document.querySelector('.ambient-orb-1');
+    const orb2 = document.querySelector('.ambient-orb-2');
+    const orb3 = document.querySelector('.ambient-orb-3');
+    if (orb1) orb1.style.transform = `translateY(${scrollY * -0.08}px)`;
+    if (orb2) orb2.style.transform = `translateY(${scrollY * 0.06}px)`;
+    if (orb3) orb3.style.transform = `translateY(${scrollY * -0.05}px)`;
+  }, { passive: true });
+</script>
 </body>
 </html>
